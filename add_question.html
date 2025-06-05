@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Question</title>
+</head>
+<body>
+    <h2>Add Question</h2>
+    <form action="add_question.php" method="POST">
+        Question Text: <input type="text" name="question_text" required><br>
+        Option 1: <input type="text" name="option1" required><br>
+        Option 2: <input type="text" name="option2" required><br>
+        Option 3: <input type="text" name="option3" required><br>
+        Option 4: <input type="text" name="option4" required><br>
+        Correct Option (1-4): <input type="number" name="correct_option" required><br>
+        Subject Code: <input type="text" name="subject_code" required><br>
+        <input type="submit" value="Add Question">
+        <p><a href="admin_login.php">Back</a></p>
+    </form>
+  
+
+<style>
+    .back-button {
+        display: inline-block;
+        margin-top: 25px;
+        padding: 10px 20px;
+        background-color: white;
+        color: #0072ff;
+        font-weight: bold;
+        text-decoration: none;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s ease;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .back-button:hover {
+        background-color: #0072ff;
+        color: white;
+    }
+   </style>
+
+    <div style="text-align:center;">
+    <a href="admin_dashboard.php" class="back-button">⬅ Back to Admin Dashboard</a>
+     </div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+	
+CREATE TABLE website (
+    website_url VARCHAR(255) PRIMARY KEY,
+    website_name VARCHAR(100),
+    admin_id INT,
+    FOREIGN KEY (admin_id) REFERENCES admin(admin_id)
+);
+
+CREATE TABLE subject (
+    subject_code VARCHAR(20) PRIMARY KEY,
+    subject_name VARCHAR(100)
+);
+
+CREATE TABLE examination (
+    exam_id INT AUTO_INCREMENT PRIMARY KEY,
+    exam_name VARCHAR(100),
+    no_of_questions INT,
+    exam_subject VARCHAR(100),
+    website_url VARCHAR(255),
+    FOREIGN KEY (website_url) REFERENCES website(website_url)
+);
+
+CREATE TABLE question ( 
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    question_text VARCHAR(255) NOT NULL,
+    option1 VARCHAR(100) NOT NULL,
+    option2 VARCHAR(100) NOT NULL,
+    option3 VARCHAR(100) NOT NULL,
+    option4 VARCHAR(100) NOT NULL,
+    correct_option INT NOT NULL, 
+    subject_code VARCHAR(20), 
+    FOREIGN KEY (subject_code) REFERENCES subject(subject_code)
+);
+
+CREATE TABLE result (
+    certificate_no INT AUTO_INCREMENT PRIMARY KEY,
+    student_id INT,
+    exam_id INT,
+    grade_obtained VARCHAR(10),
+    FOREIGN KEY (student_id) REFERENCES student(student_id),
+    FOREIGN KEY (exam_id) REFERENCES examination(exam_id)
+);
+
+CREATE TABLE student_examination (
+    student_id INT,
+    exam_id INT,
+    PRIMARY KEY (student_id, exam_id),
+    FOREIGN KEY (student_id) REFERENCES student(student_id),
+    FOREIGN KEY (exam_id) REFERENCES examination(exam_id)
+);
+
+
+
+
+INSERT INTO subject (subject_code, subject_name) VALUES ('HTML101', 'HTML Basics');
+
+INSERT INTO question (question, correct_ans, subject_code) VALUES
+('What does HTML stand for?', 'HyperText Markup Language', 'HTML101'),
+('Which tag is used to create a hyperlink?', '<a>', 'HTML101'),
+('What is the correct HTML element for inserting a line break?', '<br>', 'HTML101');
+
+

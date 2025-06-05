@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Login</title>
+    <style>
+        /* Reset default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.15);
+            padding: 30px 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            width: 380px;
+            backdrop-filter: blur(8px);
+            color: #fff;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 25px;
+            font-size: 32px;
+            color: #ffffff;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+        }
+
+        label {
+            font-weight: 600;
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            font-size: 16px;
+            outline: none;
+            background: #fff;
+            color: #333;
+            transition: box-shadow 0.3s ease;
+        }
+
+        input[type="text"]:focus {
+            box-shadow: 0 0 8px #74ebd5;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 14px;
+            background-color: #6c63ff;
+            border: none;
+            border-radius: 12px;
+            color: #fff;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #524fd1;
+            transform: scale(1.03);
+        }
+
+        p {
+            margin-top: 15px;
+        }
+
+        a {
+            color: #fff;
+            text-decoration: underline;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #ffd700;
+        }
+
+        @media (max-width: 500px) {
+            .login-container {
+                width: 90%;
+                padding: 25px 20px;
+            }
+
+            h2 {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Student Login</h2>
+        <form action="login_student.php" method="POST">
+            <label for="student_name">Name:</label>
+            <input type="text" name="student_name" id="student_name" required>
+
+            <label for="student_contact">Contact Number:</label>
+            <input type="text" name="student_contact" id="student_contact" required>
+
+            <input type="submit" value="Login">
+
+            
+        </form>
+        <p><a href="student.php">Back to Home</a></p>
+    </div>
+</body>
+</html>
