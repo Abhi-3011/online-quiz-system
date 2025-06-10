@@ -1,13 +1,13 @@
-<?php
-include 'db.php';
+<!-- <?php
+// include 'db.php';
 
-$id = $_GET['id'];
-$stmt = $conn->prepare("SELECT * FROM examination WHERE exam_id = ?");
-$stmt->bind_param("i", $id);
-$stmt->execute();
-$result = $stmt->get_result();
-$data = $result->fetch_assoc();
-?>
+// $id = $_GET['id'];
+// $stmt = $conn->prepare("SELECT * FROM examination WHERE exam_id = ?");
+// $stmt->bind_param("i", $id);
+// $stmt->execute();
+// $result = $stmt->get_result();
+// $data = $result->fetch_assoc();
+//?>
 
 <!DOCTYPE html>
 <html>
@@ -23,13 +23,13 @@ $data = $result->fetch_assoc();
     <input type="submit" name="update" value="Update">
 </form>
 
-<?php
-if (isset($_POST['update'])) {
-    $stmt = $conn->prepare("UPDATE examination SET exam_name=?, no_of_questions=?, exam_subject=?, website_url=? WHERE exam_id=?");
-    $stmt->bind_param("sissi", $_POST['exam_name'], $_POST['no_of_questions'], $_POST['exam_subject'], $_POST['website_url'], $id);
-    $stmt->execute();
-    echo "<p style='color:green;'>Updated successfully. <a href='manage_exam.php'>Go back</a></p>";
-}
+<!-- <?php
+// if (isset($_POST['update'])) {
+//     $stmt = $conn->prepare("UPDATE examination SET exam_name=?, no_of_questions=?, exam_subject=?, website_url=? WHERE exam_id=?");
+//     $stmt->bind_param("sissi", $_POST['exam_name'], $_POST['no_of_questions'], $_POST['exam_subject'], $_POST['website_url'], $id);
+//     $stmt->execute();
+//     echo "<p style='color:green;'>Updated successfully. <a href='manage_exam.php'>Go back</a></p>";
+// } -->
 ?>
 </body>
-</html>
+</html> -->
